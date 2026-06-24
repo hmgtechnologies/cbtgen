@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HMG CBT Platform Generator | Fullstack SaaS CBT Builder by HMG Concepts</title>
+<meta name="description" content="Generate branded HMG Academy CBT Pro-style fullstack SaaS assessment platforms for clients. Static frontend, Supabase backend, PWA, SEO, certificates, analytics and no paid AI API.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hmgacademyhub.github.io/cbt-generator/">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#10b981">
+<meta property="og:title" content="HMG CBT Platform Generator">
+<meta property="og:description" content="Enter client details and generate a ready-to-upload CBT platform zip in traditional or modern structure.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/generator-icon.svg">
+<link rel="icon" href="assets/generator-icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <section class="hero">
+    <span class="badge">⚙️ HMG Concepts SaaS Builder · No paid AI API</span>
+    <h1>CBT Platform Generator</h1>
+    <p>Enter a client’s details and generate a branded, installable, SEO-ready, Supabase-powered CBT platform package similar to HMG Academy CBT Pro. Choose a <b>Traditional static upload</b> or a <b>Modern npm/build workflow</b>.</p>
+    <div>
+      <span class="pill">Fullstack via Supabase</span><span class="pill">SaaS-ready SQL</span><span class="pill">PWA installable</span><span class="pill">SEO + lead generation</span><span class="pill">17 question types</span><span class="pill">No service-role key</span>
+    </div>
+  </section>
+
+  <div class="grid">
+    <main>
+      <form id="client-form" class="card">
+        <h2>1. Client / Platform Details</h2>
+        <div class="form-grid">
+          <div><label>Client / School / Organisation Name</label><input id="clientName" required value="Demo International School"></div>
+          <div><label>Generated Platform Name</label><input id="platformName" required value="Demo School CBT Pro"></div>
+          <div><label>Short App Name</label><input id="shortName" value="Demo CBT" maxlength="16"></div>
+          <div><label>Platform Type</label><select id="buildMode"><option value="traditional">Traditional static upload (root files)</option><option value="modern">Modern npm/build workflow (dist output)</option></select></div>
+          <div><label>Primary Brand Colour</label><input id="primaryColor" type="color" value="#10b981"></div>
+          <div><label>Secondary / Info Colour</label><input id="infoColor" type="color" value="#3b82f6"></div>
+          <div><label>Client Email</label><input id="clientEmail" type="email" value="info@demoschool.edu.ng"></div>
+          <div><label>Client Phone / WhatsApp</label><input id="clientPhone" value="+234 800 000 0000"></div>
+          <div><label>Admin Email for Supabase Admin Role</label><input id="adminEmail" type="email" value="admin@demoschool.edu.ng"></div>
+          <div><label>Public Domain / Deployment URL</label><input id="siteUrl" value="https://demo-school-cbt.vercel.app/"></div>
+          <div><label>Supabase Project URL</label><input id="supabaseUrl" placeholder="https://xxxx.supabase.co"></div>
+          <div><label>Supabase anon public key</label><input id="supabaseKey" placeholder="eyJhbGciOi..."></div>
+          <div class="full"><label>Client Description / SEO Text</label><textarea id="clientDescription">A secure online CBT and assessment platform for admission screening, scholarship tests, common entrance, school exams, STEM exams, recruitment tests and certification exams.</textarea></div>
+          <div class="full"><label>Logo Text / Initials (used to generate SVG logo)</label><input id="logoText" value="DS"></div>
+        </div>
+        <div class="actions"><button type="submit">🚀 Generate CBT Platform ZIP</button><button type="button" class="secondary" id="previewBtn">👁 Preview Branding</button><button type="button" class="info" onclick="HMGShowInstallGate?.()">📲 Test Install Prompt</button></div>
+        <p class="mini">Everything runs in your browser. No client data is uploaded to any server by this generator.</p>
+      </form>
+
+      <section class="card">
+        <h2>2. Generated Package Includes</h2>
+        <div class="feature-grid">
+          <div class="feature"><b>Full CBT platform</b><span>Teacher, student, admin, certificate, link checker and deployment validator pages.</span></div>
+          <div class="feature"><b>Supabase backend</b><span>SQL setup for Auth/Postgres/RLS/RPC, result saving, certificates, institutions and audit logs.</span></div>
+          <div class="feature"><b>SaaS readiness</b><span>Institution tenant table, audit log table, tenant columns and no service-role exposure.</span></div>
+          <div class="feature"><b>SEO/PWA</b><span>robots.txt, sitemap.xml, manifest, service worker, install prompt and lead-generation links.</span></div>
+          <div class="feature"><b>Traditional or modern</b><span>Choose direct root static files or npm build workflow with generated dist output.</span></div>
+          <div class="feature"><b>No paid AI API</b><span>Prompt templates are manual authoring aids only. The platform itself remains rule-based.</span></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>3. Deployment Process</h2>
+        <div class="step"><div class="num">1</div><p>Generate ZIP, extract it, and upload files to the client GitHub repository.</p></div>
+        <div class="step"><div class="num">2</div><p>Create a Supabase project. Paste and run <code>COMPLETE_SQL_SETUP.sql</code>.</p></div>
+        <div class="step"><div class="num">3</div><p>Deploy to Vercel/Cloudflare Pages/GitHub Pages. For modern mode, run <code>npm run build</code> and deploy <code>dist</code>.</p></div>
+        <div class="step"><div class="num">4</div><p>Open <code>/deployment_validator.html</code>, test teacher login, create exam, student submission, certificate verification and admin dashboard.</p></div>
+      </section>
+    </main>
+
+    <aside>
+      <section class="card">
+        <h2>Brand Preview</h2>
+        <div class="preview"><div class="logo-preview" id="logoPreview"></div><div><b id="previewName">Demo School CBT Pro</b><p id="previewDesc" class="mini">Secure CBT platform powered by HMG Concepts.</p></div></div>
+      </section>
+      <section class="card">
+        <h2>Generation Log</h2>
+        <div class="log" id="log">Ready. Fill client details and click Generate.</div>
+        <div class="progress"><div class="bar" id="bar"></div></div>
+      </section>
+      <section class="card">
+        <h2>HMG Ecosystem Lead Flow</h2>
+        <p>This generator keeps HMG Concepts ecosystem links in every generated platform so prospective clients can find HMG Academy, HMG Technologies and WhatsApp/project enquiry channels.</p>
+        <p><a class="btn" href="https://hmgconcepts.pages.dev/" target="_blank" rel="noopener">HMG Concepts →</a></p>
+      </section>
+      <section class="notice"><b>Important:</b> Generated packages use the public Supabase anon key only. Never paste a Supabase service-role key into this generator or any frontend file.</section>
+    </aside>
+  </div>
+
+  <footer>Built by HMG Concepts · Adewale Samson Adeagbo · <a style="color:var(--primary)" href="https://wa.me/2348100866322">WhatsApp</a> · <a style="color:var(--primary)" href="https://hmgconcepts.pages.dev/">HMG Concepts</a></footer>
+</div>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"HMG CBT Platform Generator","applicationCategory":"DeveloperApplication","operatingSystem":"Web","isAccessibleForFree":true,"creator":{"@type":"Organization","name":"HMG Concepts","url":"https://hmgconcepts.pages.dev/"}}</script>
+<script src="generator.js"></script>
+<script src="pwa_install_enforcer.js"></script>
+<script>if("serviceWorker" in navigator&&location.protocol!=="file:"){addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}));}</script>
+</body>
+</html>

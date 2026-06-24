@@ -1,0 +1,12 @@
+{
+  "name": "HMG CBT Platform Generator",
+  "short_name": "CBT Generator",
+  "description": "Generate branded fullstack SaaS CBT platform packages from client details. Built by HMG Concepts.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#09090b",
+  "theme_color": "#10b981",
+  "categories": ["education", "developer", "business", "productivity"],
+  "icons": [{"src":"assets/generator-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

@@ -1,0 +1,7 @@
+# HMG CBT Platform Generator
+
+A browser-based static generator by HMG Concepts that creates branded fullstack SaaS CBT platform ZIP packages from client details. It supports traditional static upload and modern npm/build workflow output. Generated platforms use Supabase Auth/Postgres/RLS/RPC, PWA installability, SEO files, 17 question types, certificates, anti-cheat controls and no paid AI API.
+
+HMG Concepts: https://hmgconcepts.pages.dev/
+HMG Academy: https://hmgacademy.pages.dev/
+WhatsApp: https://wa.me/2348100866322
